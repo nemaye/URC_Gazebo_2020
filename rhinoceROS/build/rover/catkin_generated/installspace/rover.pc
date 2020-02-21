@@ -1,0 +1,8 @@
+prefix=/home/leander/rhinoceROS/install
+
+Name: rover
+Description: Description of rover
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/leander/rhinoceROS/install/lib 
+Requires: 

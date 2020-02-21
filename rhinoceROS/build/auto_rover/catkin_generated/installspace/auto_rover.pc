@@ -1,0 +1,8 @@
+prefix=/home/leander/rhinoceROS/install
+
+Name: auto_rover
+Description: Description of auto_rover
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/leander/rhinoceROS/install/lib 
+Requires: 

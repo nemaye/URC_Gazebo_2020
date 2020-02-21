@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <include file="$(find realsense_gazebo_plugin)/launch/empty_world.launch">
+ 
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+
+  </include>
+
+<!-- set these parameters on Parameter Server -->
+<param name="robot_description" textfile="$(find realsense_gazebo_plugin)/urdf/ar_rover.gazebo" />
+<param name="use_gui" value="false"/>
+<!--tfs for joints , robot state publisher publishes tfs for joints-->
+   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  
+<include file="$(find realsense_gazebo_plugin)/launch/ar_gazebo_front.launch"/>
+<include file="$(find realsense_gazebo_plugin)/launch/ar_gazebo_right.launch"/>
+
+<node name="mapviz_robot_image_publisher" pkg="realsense_gazebo_plugin" type="mapviz_gps_fix.py"/> 
+
+  <!-- Spawn dd_robot into Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
+     args="-file $(find realsense_gazebo_plugin)/urdf/ar_rover.gazebo -urdf -model rs200" />
+
+
+</launch>
+

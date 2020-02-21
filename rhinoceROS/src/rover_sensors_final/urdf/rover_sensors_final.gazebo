@@ -1,0 +1,1137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="rover_sensors_final">
+<link name="dummy">
+   </link>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0974119229536537 -0.0033838673625131 0.118284466246298"
+        rpy="0 0 0" />
+      <mass
+        value="0.001" />
+      <inertia
+        ixx="0.274921224314501"
+        ixy="-6.97546181423208E-06"
+        ixz="0.00161353285265084"
+        iyy="0.52344675669446"
+        iyz="-1.69332470814011E-06"
+        izz="0.469334126026911" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+<gazebo reference="base_link">
+    <material>Gazebo/White</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+  <joint name="dummy_joint" type="fixed">
+     <parent link="dummy"/>
+     <child link="base_link"/>
+   </joint>
+
+  <link
+    name="fl_wheel">
+    <inertial>
+      <origin
+         xyz="-7.5806583232918E-11 1.11765657195761 -1.7887302750097E-11"
+        rpy="0 0 0" />
+      <mass
+        value="1.0" />
+      <inertia
+        ixx="0.0878552595325176"
+        ixy="-3.85685055660021E-17"
+        ixz="-3.46462310065257E-07"
+        iyy="0.125599880383852"
+        iyz="-3.81012707919723E-17"
+        izz="0.0878547871251783" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 -0.5 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/fl_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.823529411764706 0.823529411764706 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/fl_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="fl_wheel">
+      <mu1 value="10"/>
+      <mu2 value="10"/>
+
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+  <joint
+    name="fl_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.78192 1.1 -0.18351"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fl_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="ml_wheel">
+    <inertial>
+      <origin
+        xyz="1.94069426084909E-06 1.11779382767718 -6.20832019126993E-09"
+        rpy="0 0 0" />
+      <mass
+        value="1.0" />
+      <inertia
+        ixx="0.0878552595325176"
+        ixy="3.2183088813281E-16"
+        ixz="-3.46462310096482E-07"
+        iyy="0.125599880383852"
+        iyz="-2.23139846401561E-16"
+        izz="0.0878547871251783" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 -0.675 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/ml_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.823529411764706 0.823529411764706 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/ml_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="ml_wheel">
+      <mu1 value="10"/>
+      <mu2 value="10"/>
+
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+  <joint
+    name="ml_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.00050767 1.1 -0.18101"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="ml_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="bl_wheel">
+    <inertial>
+      <origin
+        xyz="0 1.11808157205761 -3.33066907387547E-16"
+        rpy="0 0 0" />
+      <mass
+        value="1.0" />
+      <inertia
+        ixx="0.0878552595325176"
+        ixy="2.30740475183064E-17"
+        ixz="-3.46462310072426E-07"
+        iyy="0.125599880383852"
+        iyz="-1.72060390964789E-17"
+        izz="0.0878547871251784" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 -0.5 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/bl_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.823529411764706 0.823529411764706 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/bl_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="bl_wheel">
+      <mu1 value="10"/>
+      <mu2 value="10"/>
+
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+  <joint
+    name="bl_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.782934189282725 1.1 -0.178516200300202"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bl_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="fr_wheel">
+    <inertial>
+      <origin
+        xyz="-7.21644966006352E-16 -1.12208157205761 9.43689570931383E-16"
+        rpy="0 0 0" />
+      <mass
+        value="1.0" />
+      <inertia
+        ixx="0.0878552595325176"
+        ixy="4.08512416355123E-17"
+        ixz="-3.46462310077417E-07"
+        iyy="0.125599880383852"
+        iyz="3.03752389522273E-17"
+        izz="0.0878547871251784" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0.675 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/fr_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.823529411764706 0.823529411764706 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/fr_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="fr_wheel">
+      <mu1 value="10"/>
+      <mu2 value="10"/>
+
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+  <joint
+    name="fr_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.78192 -1.1 -0.18351"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fr_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="mr_wheel">
+    <inertial>
+      <origin
+       xyz="-1.94069426134869E-06 -1.12208157205761 6.20832030229224E-09"
+        rpy="0 0 0" />
+      <mass
+        value="1.0" />
+      <inertia
+        ixx="0.087855259532517"
+        ixy="-9.00076182210418E-18"
+        ixz="-3.46462310021229E-07"
+        iyy="0.125599880383851"
+        iyz="5.15247657999915E-17"
+        izz="0.0878547871251778" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0.675 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/mr_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.823529411764706 0.823529411764706 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/mr_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="mr_wheel">
+      <mu1 value="10"/>
+      <mu2 value="10"/>
+
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+  <joint
+    name="mr_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.00050573 -1.1 -0.18101"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="mr_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+    <link
+    name="br_wheel">
+    <inertial>
+      <origin
+        xyz="7.58648699417108E-11 -1.12208157205761 1.75760517251433E-11"
+        rpy="0 0 0" />
+      <mass
+        value="1.0" />
+      <inertia
+        ixx="0.0878552595325176"
+        ixy="1.66850472168605E-17"
+        ixz="-3.46462310073718E-07"
+        iyy="0.125599880383852"
+        iyz="-8.04981352071063E-18"
+        izz="0.0878547871251783" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0.675 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/br_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.823529411764706 0.823529411764706 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/br_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="br_wheel">
+      <mu1 value="10"/>
+      <mu2 value="10"/>
+
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+  <joint
+    name="br_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.78293 -1.1 -0.17852"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="br_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+
+
+<!--......................DIFFERENTIAL DRIVES............................................-->
+
+<gazebo>
+  <plugin name="differential_drive_controller1" filename="libgazebo_ros_diff_drive.so">
+    <alwaysOn>true</alwaysOn>
+    <updateRate>50</updateRate>
+    <leftJoint>fl_wheel_joint</leftJoint>
+    <rightJoint>fr_wheel_joint</rightJoint>
+    <wheelSeparation>1.555</wheelSeparation>
+    <wheelDiameter>0.3</wheelDiameter>
+    <torque>50</torque>
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <publishOdomTF>true</publishOdomTF>
+    <publishWheelTF>true</publishWheelTF>
+    <publishWheelJointState>false</publishWheelJointState>
+    <rosDebugLevel>na</rosDebugLevel>
+    <wheelAcceleration>0</wheelAcceleration>
+    <wheelTorque>50</wheelTorque>
+    <odometrySource>world</odometrySource>
+    <publishTf>1</publishTf>
+  </plugin>
+</gazebo>
+
+<gazebo>
+  <plugin name="differential_drive_controller2" filename="libgazebo_ros_diff_drive.so">
+    <alwaysOn>true</alwaysOn>
+    <updateRate>50</updateRate>
+    <leftJoint>ml_wheel_joint</leftJoint>
+    <rightJoint>mr_wheel_joint</rightJoint>
+    <wheelSeparation>1.555</wheelSeparation>
+    <wheelDiameter>0.3</wheelDiameter>
+    <torque>50</torque>
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <publishOdomTF>true</publishOdomTF>
+    <publishWheelTF>true</publishWheelTF>
+    <publishWheelJointState>false</publishWheelJointState>
+    <rosDebugLevel>na</rosDebugLevel>
+    <wheelAcceleration>0</wheelAcceleration>
+    <wheelTorque>50</wheelTorque>
+    <odometrySource>world</odometrySource>
+    <publishTf>1</publishTf>
+  </plugin>
+</gazebo>
+<gazebo>
+  <plugin name="differential_drive_controller3" filename="libgazebo_ros_diff_drive.so">
+    <alwaysOn>true</alwaysOn>
+    <updateRate>50</updateRate>
+    <leftJoint>bl_wheel_joint</leftJoint>
+    <rightJoint>br_wheel_joint</rightJoint>
+    <wheelSeparation>1.555</wheelSeparation>
+    <wheelDiameter>0.3</wheelDiameter>
+    <torque>5</torque>
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <publishOdomTF>true</publishOdomTF>
+    <publishWheelTF>true</publishWheelTF>
+    <publishWheelJointState>false</publishWheelJointState>
+    <rosDebugLevel>na</rosDebugLevel>
+    <wheelAcceleration>0</wheelAcceleration>
+    <wheelTorque>50</wheelTorque>
+    <odometrySource>world</odometrySource>
+    <publishTf>1</publishTf>
+  </plugin>
+</gazebo>
+
+
+
+
+
+<!--............................................................................................-->
+
+
+
+
+  <link
+    name="gps">
+    <inertial>
+      <origin
+        xyz="-0.000485624054398004 0.000308605789608118 -2.24630807402985E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0574872228273307" />
+      <inertia
+        ixx="1.48765556793307E-05"
+        ixy="4.28941138120931E-07"
+        ixz="-1.77513206942731E-09"
+        iyy="1.53297675957426E-05"
+        iyz="-5.05505859993508E-11"
+        izz="2.66209101762237E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/gps.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.203921568627451 0.203921568627451 0.203921568627451 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/gps.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+<gazebo reference="gps">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+  <joint
+    name="gps_joint"
+    type="fixed">
+    <origin
+      xyz="-0.445387827952741 0.209500000069579 0.148000000020972"
+      rpy="0 0 2.06259454146285" />
+    <parent
+      link="base_link" />
+    <child
+      link="gps" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+<!--..................................GPS SENSOR PLUGIN.......................................-->
+
+    <!-- GPS Sensor -->
+  <gazebo>
+    <plugin name="gazebo_ros_gps" filename="libhector_gazebo_ros_gps.so">
+      <alwaysOn>1</alwaysOn>
+      <updateRate>50</updateRate>
+      <bodyName>gps</bodyName>
+      <topicName>fix</topicName>
+      <velocityTopicName>gps_velocity</velocityTopicName>
+      <drift>5.0 5.0 5.0</drift>
+      <gaussianNoise>0 0 0</gaussianNoise>
+      <velocityDrift>0 0 0</velocityDrift>
+      <velocityGaussianNoise>0 0 0</velocityGaussianNoise>
+      <frameName>gps_link</frameName>
+     <!--<referenceLatitude>38.419354</referenceLatitude>-->
+     <!--<referenceLongitude>-110.781900</referenceLongitude-->  <!--for blacklister--> 
+     <!--<referenceLatitude>38.419853</referenceLatitude> 
+     <referenceLongitude>-110.781529</referenceLongitude>   for blacklister 1,2-->
+     <referenceLatitude>13.347590</referenceLatitude> 
+     <referenceLongitude>74.79208833</referenceLongitude>   <!--for workshop-->
+    </plugin>
+  </gazebo>
+
+<!--.........................................................................................-->
+
+
+
+  <link
+    name="imu">
+    <inertial>
+      <origin
+        xyz="-0.00228607576620064 0.00167778208132408 0.000813831561026324"
+        rpy="0 0 0" />
+      <mass
+        value="0.0124663914212775" />
+      <inertia
+        ixx="8.55619789689327E-06"
+        ixy="-3.21250435890868E-12"
+        ixz="-2.41314768837352E-11"
+        iyy="8.41381353288841E-06"
+        iyz="8.24442552303421E-12"
+        izz="1.69672838575925E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/imu.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/imu.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+<gazebo reference="imu">
+    <material>Gazebo/Orange</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+  <joint
+    name="imu_joint"
+    type="fixed">
+    <origin
+      xyz="-0.54 -0.0008913 1.0936"
+      rpy="0 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+<!--....................................PLUGINS.........................................-->
+<gazebo>
+      <plugin name="imu_plugin" filename="libhector_gazebo_ros_imu.so">
+            <updateRate>50.0</updateRate>
+            <bodyName>base_link</bodyName>
+            <topicName>imu</topicName>
+            <serviceName>/imu/calibrate</serviceName>
+            <accelOffset>0.0 0.0 0.0</accelOffset>
+            <accelDrift>0.0 0.0 0.0</accelDrift>
+            <accelDriftFrequency>0.0 0.0 0.0</accelDriftFrequency>
+            <accelGaussianNoise>0.0 0.0 0.0</accelGaussianNoise>
+            <rateOffset>0.0 0.0 0.0</rateOffset>
+            <rateDrift>0.0 0.0 0.0</rateDrift>
+            <rateDriftFrequency>0.0 0.0 0.0</rateDriftFrequency>
+            <rateGaussianNoise>0.0 0.0 0.0</rateGaussianNoise>
+            <headingOffset>0.0</headingOffset>
+            <headingDrift>0.0</headingDrift>
+            <headingDriftFrequency>0.0</headingDriftFrequency>
+            <headingGaussianNoise>0.0</headingGaussianNoise>
+            <rpyOffset>0.0 0.0 0.0</rpyOffset>
+            <xyzOffset>0.0 0.0 0.0</xyzOffset>
+            <gaussianNoise>0.0</gaussianNoise>
+	    <frameName>imu_link</frameName>
+        </plugin>
+      <plugin name="magnetometer" filename="libhector_gazebo_ros_magnetic.so">
+            <updateRate>50.0</updateRate>
+            <bodyName>base_link</bodyName>
+            <topicName>magnetometer</topicName>
+            <offset>0 0 0</offset>
+            <drift>0.0 0.0 0.0</drift>
+            <gaussianNoise>1.3e-2 1.3e-2 1.3e-2</gaussianNoise>
+        </plugin>   
+</gazebo>
+
+<!--..................................................................................-->
+	
+
+  <link
+    name="logitech">
+    <inertial>
+      <origin
+        xyz="-0.0838596835214291 -0.0428607498101916 -0.0863890989139522"
+        rpy="0 0 0" />
+      <mass
+        value="0.0481973695670403" />
+      <inertia
+        ixx="5.85434355276405E-06"
+        ixy="3.02109400960139E-09"
+        ixz="2.106855390168E-09"
+        iyy="1.25015520963418E-05"
+        iyz="6.66004790783349E-08"
+        izz="1.45670564442653E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="-0.1 0.1 -0.05"
+        rpy="-1.5707 0 1.5707" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/logitech.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-0.1 0.1 -0.05"
+        rpy="-1.5707 0 1.5707" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/logitech.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+<gazebo reference="logitech">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+  <joint
+    name="logitech_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.24 0.15"
+      rpy="0 0 -1.5707" />
+    <parent
+      link="base_link" />
+    <child
+      link="logitech" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+<!--SENSOR PLUGIN-->
+
+<gazebo reference="logitech">
+    <sensor type="camera" name="alvar_camera">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.047</horizontal_fov>
+        <image>
+	    <width>640</width>
+            <height>480</height>
+            <format>RGB_INT8</format>
+        </image>
+        <clip>
+               <near>0.1</near>
+                <far>100</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>ar/camera</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>ar_camera</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <link
+    name="sick_lidar">
+    <inertial>
+      <origin
+        xyz="-0.0612507917751316 4.03225620820174E-05 0.0343555623087885"
+        rpy="0 0 0" />
+      <mass
+        value="1.44392107005547" />
+      <inertia
+        ixx="0.00372014799684044"
+        ixy="-1.35676118499486E-06"
+        ixz="4.66243647579705E-06"
+        iyy="0.00281748454203298"
+        iyz="1.64566950126631E-06"
+        izz="0.00287643121524132" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.035 0 0.05"
+        rpy="0 -1.5707 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/sick_lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 -1.5707 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sensors_final/meshes/sick_lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+<gazebo reference="sick_lidar">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+  <joint
+    name="sick_lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.345 0.0005 0.19"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="sick_lidar" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+<!--.................................SENSOR PLUGIN.....................................-->
+
+  <gazebo reference="sick_lidar">
+    <sensor type="ray" name="lidar">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>50</update_rate>
+      <ray>
+         <scan>
+            <horizontal>
+               <samples>21</samples>    <!--180/10-->
+               <resolution>1</resolution>
+               <min_angle>-2.399827</min_angle>
+               <max_angle>2.399827</max_angle>
+            </horizontal>
+            <vertical>
+               <samples>1</samples>
+               <resolution>1</resolution> 
+          <max_angle>0.14835</max_angle>
+          <min_angle>0</min_angle>
+            </vertical>
+         </scan>
+         <range>
+            <min>0.3</min>
+            <max>16.0</max>
+            <resolution>0.05</resolution>
+         </range>
+      </ray>
+      <plugin filename="libgazebo_ros_laser.so" name="gazebo_lidar">
+         <gaussianNoise>0.005</gaussianNoise>
+         <alwaysOn>true</alwaysOn>
+         <update_rate>50</update_rate>
+         <updateRateHZ>10.0</updateRateHZ>
+         <topicName>lidar</topicName>
+         <frameName>sick_lidar</frameName>
+      </plugin>
+   </sensor>
+  </gazebo>
+
+
+<!--.......................INTEL REALSENSE..............................................-->
+    <!-- Camera link -->
+    <link name="rs200_camera">
+        <visual>
+            <origin rpy="1.5707 0 1.5707" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://rover_sensors_final/meshes/realsense.STL"/>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.0078 0.130 0.0192"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.0615752"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="9.108e-05"
+                     ixy="0"
+                     ixz="0"
+                     iyy="2.51e-06"
+                     iyz="0"
+                     izz="8.931e-05"
+            />
+        </inertial>
+    </link>
+
+<gazebo reference="rs200_camera">
+    <material>Gazebo/Red</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+    <!-- Connect camera to parent frame-->
+    <joint name="realsense_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="rs200_camera"/>
+	<origin rpy="0 0 0" xyz="0.435 0 0.155"/>
+    </joint>
+
+    <!-- Virtual links representing the cameras positons and orientations-->
+    <link name="color" />
+    <link name="depth" />
+    <link name="ired1" />
+    <link name="ired2" />
+
+    <!-- Joints positioning the virtual links with respect to the camera main link-->
+    <joint name="color_joint" type="fixed">
+        <parent link="rs200_camera" />
+        <child link="color" />
+        <!-- <origin xyz="0 -0.046 0.004" rpy="0 0 0"/> -->
+        <!-- The default position is change since in Rviz the cloud depth axis is Z not X-->
+        <origin xyz="0 -0.046 0.004" rpy="1.5707 3.1414 1.5707"/>
+    </joint>
+
+    <joint name="depth_joint" type="fixed">
+        <parent link="rs200_camera" />
+        <child link="depth" />
+        <origin xyz="0 -0.03 0.004" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="ired1_joint" type="fixed">
+        <parent link="rs200_camera" />
+        <child link="ired1" />
+        <origin xyz="0 -0.06 0.004" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="ired2_joint" type="fixed">
+        <parent link="rs200_camera" />
+        <child link="ired2" />
+        <origin xyz="0 0.01 0.004" rpy="0 0 0"/>
+    </joint>
+
+<!-- **********************************************************-->
+<!-- GAZEBO DEFINITIONS ***************************************-->
+
+    <!-- Load plugin to the model ("robot" in urdf format)-->
+    <gazebo>
+        <plugin name="r200" filename="librealsense_gazebo_plugin.so"/>
+        <!--<pose frame="">0 0 0.015 0 0 0</pose>-->
+    </gazebo>
+
+    <!-- Load parameters to model's main link-->
+    <gazebo reference="rs200_camera">
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+        <turnGravityOff>false</turnGravityOff>
+        <!--<mu>1</mu>-->
+        <mu2>1</mu2>
+        <fdir1>0 0 0</fdir1>
+        <!--<slip1>0</slip1>
+        <slip2>0</slip2>-->
+        <kp>1e+13</kp>
+        <kd>1</kd>
+        <!--<max_vel>0.01</max_vel>
+        <min_depth>0</min_depth>-->
+
+        <sensor name="color" type="camera">
+            <pose frame="">0 -0.046 0.004 0 0 0</pose>
+            <camera name="rs200_camera">
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+                <width>640</width>
+                <height>480</height>
+                <format>RGB_INT8</format>
+            </image>
+            <clip>
+                <near>0.1</near>
+                <far>100</far>
+            </clip>
+            <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.007</stddev>
+            </noise>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>60</update_rate>
+            <visualize>1</visualize>
+        </sensor>
+        <sensor name="ired1" type="camera">
+            <pose frame="">0 -0.06 0.004 0 0 0</pose>
+            <camera name="rs200_camera">
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+                <width>640</width>
+                <height>480</height>
+                <format>L_INT8</format>
+            </image>
+            <clip>
+                <near>0.1</near>
+                <far>100</far>
+            </clip>
+            <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.05</stddev>
+            </noise>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>60</update_rate>
+            <visualize>0</visualize>
+        </sensor>
+        <sensor name="ired2" type="camera">
+            <pose frame="">0 0.01 0.004 0 0 0</pose>
+            <camera name="rs200_camera">
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+                <width>640</width>
+                <height>480</height>
+                <format>L_INT8</format>
+            </image>
+            <clip>
+                <near>0.1</near>
+                <far>100</far>
+            </clip>
+            <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.05</stddev>
+            </noise>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>60</update_rate>
+            <visualize>0</visualize>
+        </sensor>
+        <sensor name="depth" type="depth">
+            <pose frame="">0 -0.03 0.004 0 0 0</pose>
+            <camera name="rs200_camera">
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+                    <width>640</width>
+                    <height>480</height>
+            </image>
+            <clip>
+                    <near>0.1</near>
+                    <far>100</far>
+            </clip>
+            <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.100</stddev>
+            </noise>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>60</update_rate>
+            <visualize>0</visualize>
+        </sensor>
+    </gazebo>
+
+
+
+<gazebo>
+  <model name='light_model'>
+    <pose>-0.48887 -0.104 0.042 3.1416 0 1.5708</pose>
+    <link name='light_link'>
+      <visual name='light_source'>
+        <pose>-0 0 0 0 0 0</pose>
+
+      <geometry>
+        <mesh>
+          <uri>package://rover_sensors_final/meshes/led_matrix.STL</uri>
+	</mesh>
+	
+      </geometry>
+
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>1 1 1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <light name='light_source' type='spot'>
+          <pose>0.095 0 -0.05 -1.5707 0 0</pose>
+          <attenuation>
+            <range>30</range>
+            <linear>0.05</linear>
+          </attenuation>
+          <spot>
+            <inner_angle>0.3</inner_angle>
+            <outer_angle>0.35</outer_angle>
+            <falloff>1</falloff>
+          </spot>
+          <direction>0 0 -1</direction>
+        </light>
+    </link>
+    <plugin name='light_control' filename='libLedPlugin.so'>
+      <light>
+        <id>light_link/light_source</id>
+        <enable>true</enable>
+        <duration>1</duration>
+        <interval>0.005</interval>
+        <color>1 0 0</color>
+      </light>
+    </plugin>
+  </model>
+</gazebo>
+
+<gazebo>
+  <joint name='light_joint' type='fixed'>
+    <parent>base_link</parent>
+    <child>light_model::light_link</child>
+  </joint>
+</gazebo>
+
+
+
+</robot>
+

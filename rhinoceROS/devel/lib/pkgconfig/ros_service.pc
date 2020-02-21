@@ -1,0 +1,8 @@
+prefix=/home/leander/rhinoceROS/devel
+
+Name: ros_service
+Description: Description of ros_service
+Version: 0.0.0
+Cflags: -I/home/leander/rhinoceROS/devel/include
+Libs: -L/home/leander/rhinoceROS/devel/lib 
+Requires: 

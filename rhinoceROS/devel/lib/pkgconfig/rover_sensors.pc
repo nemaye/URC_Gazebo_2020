@@ -1,0 +1,8 @@
+prefix=/home/leander/rhinoceROS/devel
+
+Name: rover_sensors
+Description: Description of rover_sensors
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/leander/rhinoceROS/devel/lib 
+Requires: 
