@@ -1,2 +1,0 @@
-beginner_tutorials:pysdf:realsense_gazebo_plugin:ros_service:rover_mrm:rover_sensors_final
--DCATKIN_DEVEL_PREFIX=/home/leander/rhinoceROS/devel -DCMAKE_INSTALL_PREFIX=/home/leander/rhinoceROS/install -G Unix Makefiles

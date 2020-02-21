@@ -1,8 +1,0 @@
-prefix=/home/leander/rhinoceROS/install
-
-Name: chumma
-Description: Description of chumma
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/leander/rhinoceROS/install/lib 
-Requires: 

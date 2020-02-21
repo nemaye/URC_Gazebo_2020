@@ -1,8 +1,0 @@
-prefix=/home/leander/rhinoceROS/install
-
-Name: rover_2020
-Description: Description of rover_2020
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/leander/rhinoceROS/install/lib 
-Requires: 

@@ -1,8 +1,0 @@
-prefix=/home/leander/rhinoceROS/install
-
-Name: rover_mrm
-Description: Description of rover_mrm
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/leander/rhinoceROS/install/lib 
-Requires: 
