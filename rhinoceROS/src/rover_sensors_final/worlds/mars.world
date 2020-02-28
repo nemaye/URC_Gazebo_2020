@@ -27,6 +27,7 @@
     <include>
       <uri>model://holder5</uri>
       <pose>10 1 0 0 0 0</pose>
+      <static>1</static>
 
     </include>
 
@@ -34,6 +35,7 @@
     <include>
       <uri>model://holder6</uri>
       <pose>10 -1 0 0 0 0</pose>
+      <static>1</static>
     </include>
 
 
