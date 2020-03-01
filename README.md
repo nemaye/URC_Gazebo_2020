@@ -48,5 +48,9 @@ Errors
 
     sudo apt-get install ros-melodic-hector-gazebo-plugins
 
+-- 3) In case if you don't have the ROS package ar track alvar: 
+
+    sudo apt-get install ros-melodic-ar-track-alvar
+
     
 
