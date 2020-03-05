@@ -63,7 +63,7 @@ def right():
 
     ob1.angular.x = 0
     ob1.angular.y = 0
-    ob1.angular.z = -1.0
+    ob1.angular.z = 1.0
     pub.publish(ob1)
 
 
@@ -75,7 +75,7 @@ def left():
 
     ob1.angular.x = 0
     ob1.angular.y = 0
-    ob1.angular.z = 1.0
+    ob1.angular.z = -1.0
     pub.publish(ob1)
 
 
