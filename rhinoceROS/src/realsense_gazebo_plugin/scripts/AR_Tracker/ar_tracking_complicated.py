@@ -225,17 +225,19 @@ def midpoint_follower():
     global ar_heading, frame, gate, ar_id, still_angle, count, k, left_distance, right_distance, flag, posz, ui ,gui
 
     if frame == 'color' or frame == 'ar_camera':
+
         # ALGORITHM CLIPPING:
         if posz > 4:
             return
-
+        rospy.set_param('/detected',1)
+        print('detected')
 
         # PARALLEL ALIGNMENT
         while flag == 0:
                    
             # CONFIRMATION THAT THE NEAREST AR TAG IS DETECTED:
 
-            if (ar_id == 3 or ar_id == 5) or (ar_id == 7 or ar_id == 9):
+            '''if (ar_id == 3 or ar_id == 5) or (ar_id == 7 or ar_id == 9):
 
                 while (((ar_id == 3 or ar_id == 5) or (
                         ar_id == 7 or ar_id == 9)) and ui < 360) and left_distance < right_distance:
@@ -247,7 +249,7 @@ def midpoint_follower():
                 while (((ar_id == 4 or ar_id == 6) or (
                         ar_id == 8 or ar_id == 10)) and gui < 360) and right_distance < left_distance:
                     rotate_left(1)
-                    gui += 1
+                    gui += 1'''
 
 
             if ar_id != -1 and count == 0:
@@ -316,6 +318,7 @@ if __name__ == '__main__':
         rospy.init_node('ar_tracking_node', anonymous=True, disable_signals=True)
         pub_p = rospy.Publisher('central_point', PointStamped, queue_size=10)
         pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
+        rospy.set_param('/detected',0)        
         ar_listener = tf.TransformListener()
         rate = rospy.Rate(50)
 
